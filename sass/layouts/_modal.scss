@@ -4,9 +4,11 @@
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 1000;
   background: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition: opacity 250ms var(--animation-timing-function);
+  overflow-y: scroll;
 }
 
 .backdrop.is-hidden {
@@ -22,14 +24,25 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 528px;
-  min-height: 581px;
-  padding: 40px;
+width: calc(100vw - 30px);
+
+  padding: 26px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   background-color: var(--text-accent-color);
   transition: transform 250ms var(--animation-timing-function);
+
+  @media screen and (min-width:480px) {
+    width: 450px;
+    padding: 40px;
+    height: 609px;
+    
+  }
+  @media screen and (min-width:1200px) {
+  width: 528px;
+  min-height: 581px;
+}
 }
 
 .modal__title-h2 {
@@ -49,12 +62,12 @@
 .modal-form__group {
   position: relative;
   padding: 0;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .modal-form__comment-group {
   @extend .modal-form__group;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
 }
 .modal-form__input {
   @extend %input;
@@ -116,6 +129,8 @@
 .modal-agreement__label {
   display: flex;
   align-items: center;
+
+  
 }
 
 .modal-agreement__checkbox {
@@ -135,16 +150,25 @@
 
 .modal-agreement__text {
   display: inline-block;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.71;
   margin-bottom: 0px;
   margin-left: 7px;
+
+  
+  @media screen and (min-width:1199px){
+    font-size: 14px;  
+    }
 }
 
 .modal-agreement__link {
   @extend %link;
   color: var(--accent-color);
   text-decoration: underline;
+
+  @media screen and (max-width:1199px){
+    font-size: 12px;  
+    }
 }
 
 .modal-close__icon {
