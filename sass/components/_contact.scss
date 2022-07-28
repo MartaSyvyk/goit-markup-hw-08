@@ -1,0 +1,33 @@
+.header-contact__list {
+  @extend %list;
+  display: flex;
+  margin-left: auto;
+}
+
+.header-contact__link {
+  @extend %link;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  font-weight: 500;
+  line-height: 1.14;
+  transition: color 250ms var(--animation-timing-function);
+
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.header-contact__icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  fill: var(--text-color);
+  transition: fill 250ms var(--animation-timing-function);
+
+  .header-contact__link:hover &,
+  .header-contact__link:focus & {
+    fill: var(--accent-color);
+  }
+}

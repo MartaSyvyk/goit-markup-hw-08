@@ -1,0 +1,6 @@
+@mixin social-logo($color) {
+  width: 20px;
+  height: 20px;
+  fill: $color;
+  transition: color 250ms var(--animation-timing-function);
+  }
