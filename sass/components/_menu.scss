@@ -28,7 +28,7 @@ flex-direction: column;
 
 .header-menu__btn{
   @extend %button;
-  position: fixed;
+  position: absolute;
   justify-content: space-around;
   top: 10px;
   right: 10px;

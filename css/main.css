@@ -602,7 +602,7 @@ img {
 }
 
 .header-menu__btn {
-  position: fixed;
+  position: absolute;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   top: 10px;
@@ -1504,6 +1504,7 @@ img {
 }
 
 .header-container {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

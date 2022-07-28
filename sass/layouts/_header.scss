@@ -1,5 +1,6 @@
 .header-container {
   @extend %container;
+  position: relative;
   display: flex;
   align-items: center;
 
