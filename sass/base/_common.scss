@@ -14,8 +14,6 @@ body {
   font-size: 14px;
   line-height: 1.71;
   color: var(--text-color);
-
-
 }
 
 h1,
@@ -39,9 +37,8 @@ img {
   letter-spacing: 0.03em;
   color: var(--header-color);
 
-  @media screen and (min-width:1200px){
+  @media screen and (min-width: 1200px) {
     font-size: 36px;
-    
   }
 }
 

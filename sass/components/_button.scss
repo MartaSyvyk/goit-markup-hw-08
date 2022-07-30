@@ -8,34 +8,31 @@
     background-color: var(--button-hover-color);
   }
 
-  @media screen and (min-width:1200px) {
+  @media screen and (min-width: 1200px) {
     padding: 10px 32px;
-    
   }
 }
 
 .signup-container__btn {
   @extend %button;
   padding: 10px 28px 10px 29px;
-  // margin: 0 auto 0 10px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-  &:hover, &:focus {
-        background-color: var(--button-hover-color);
+  &:hover,
+  &:focus {
+    background-color: var(--button-hover-color);
   }
 
-  &::after{
-        content: '';
-          display: inline-block;
-          width: 24px;
-          height: 24px;
-          background-image: url(../../images/icon-send.svg);
-          background-size: contain;
-          margin-left: 10px;
-        }
-
-        
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../images/icon-send.svg);
+    background-size: contain;
+    margin-left: 10px;
   }
+}
 
 .modal-submit__btn {
   @extend %button;
@@ -47,10 +44,9 @@
   &:focus {
     background-color: var(--button-hover-color);
   }
-@media screen and (min-widh:768px){
-  padding: 10px 55px;
-}
- 
+  @media screen and (min-widh: 768px) {
+    padding: 10px 55px;
+  }
 }
 
 .filter__btn {
@@ -62,13 +58,13 @@
   letter-spacing: 0.03em;
   padding: 6px 22px;
   transition: color 250ms var(--animation-timing-function),
-    background-color 250ms var(--animation-timing-function),
-    box-shadow 250ms var(--animation-timing-function);
+  background-color 250ms var(--animation-timing-function),
+  box-shadow 250ms var(--animation-timing-function);
 
   &:hover,
   &:focus {
     color: var(--text-accent-color);
-      cursor: pointer;
+    cursor: pointer;
     background-color: var(--accent-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
       0px 2px 2px rgba(0, 0, 0, 0.12);
