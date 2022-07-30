@@ -577,10 +577,10 @@ img {
   z-index: 10;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
-  -webkit-transition: -webkit-transform 250ms var(--animation-timing-function);
-  transition: -webkit-transform 250ms var(--animation-timing-function);
-  transition: transform 250ms var(--animation-timing-function);
-  transition: transform 250ms var(--animation-timing-function), -webkit-transform 250ms var(--animation-timing-function);
+  -webkit-transition: -webkit-transform 500ms var(--animation-timing-function);
+  transition: -webkit-transform 500ms var(--animation-timing-function);
+  transition: transform 500ms var(--animation-timing-function);
+  transition: transform 500ms var(--animation-timing-function), -webkit-transform 500ms var(--animation-timing-function);
 }
 .header-menu.is-open {
   -webkit-transform: translateX(0);
@@ -603,8 +603,12 @@ img {
 
 .header-menu__btn {
   position: absolute;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   top: 10px;
   right: 10px;
   padding: 0;
@@ -613,17 +617,17 @@ img {
   height: 40px;
   border: none;
   z-index: 100;
-  fill: rgb(33, 33, 33);
   background-color: #ffffff;
   -webkit-transition: fill 250ms var(--animation-timing-function);
   transition: fill 250ms var(--animation-timing-function);
 }
-.header-menu__btn.is-open {
-  right: 15px;
-}
 .header-menu__btn:hover {
   cursor: pointer;
   fill: var(--accent-color);
+}
+.header-menu__btn.is-open {
+  right: 15px;
+  position: fixed;
 }
 @media screen and (min-width: 768px) {
   .header-menu__btn {
@@ -631,15 +635,30 @@ img {
   }
 }
 
-.header-menu__btn.icon-cross {
-  display: none;
+.header-menu__icon {
+  width: 24px;
+  height: 16px;
+}
+.header-menu__btn.is-open .header-menu__icon {
+  width: 19px;
+  height: 19px;
 }
 
-.header-menu__btn.is-open .icon-cross {
-  display: block;
+.icon-menu {
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
-.header-menu__btn.is-open .icon-cross .icon-menu {
-  display: none;
+.header-menu__btn.is-open .icon-menu {
+  opacity: 0;
+}
+
+.icon-close {
+  opacity: 0;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+.header-menu__btn.is-open .icon-close {
+  opacity: 1;
 }
 
 .banner {
@@ -678,11 +697,38 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.1)), to(rgba(47, 48, 58, 0.4))), url(../images/banner-bckgr.jpg);
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.1), rgba(47, 48, 58, 0.4)), url(../images/banner-bckgr.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.1)), to(rgba(47, 48, 58, 0.4))), url(../images/banner/Header-img_sm.jpg);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.1), rgba(47, 48, 58, 0.4)), url(../images/banner/Header-img_sm.jpg);
+}
+@media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .banner-container {
+    background-image: url(../images/banner/Header-img_sm@2x.jpg);
+  }
+}
+@media screen and (min-width: 768px) {
+  .banner-container {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.1)), to(rgba(47, 48, 58, 0.4))), url(../images/banner/Header-img_md.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.1), rgba(47, 48, 58, 0.4)), url(../images/banner/Header-img_md.jpg);
+  }
+}
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .banner-container {
+    background-image: url(../images/banner/Header-img_md@2x.jpg);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner-container {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.1)), to(rgba(47, 48, 58, 0.4))), url(../images/banner/Header-img_lg.jpg);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.1), rgba(47, 48, 58, 0.4)), url(../images/banner/Header-img_lg.jpg);
+  }
+}
+@media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
+  .banner-container {
+    background-image: url(../images/banner/Header-img_lg@2x.jpg);
+  }
 }
 
 .banner-container__title {

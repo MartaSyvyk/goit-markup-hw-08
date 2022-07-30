@@ -10,7 +10,7 @@ flex-direction: column;
   padding: 48px 40px;
   z-index: 10;
   transform: translateX(100%);
-  transition: transform 250ms var(--animation-timing-function);
+  transition: transform 500ms var(--animation-timing-function);
 
   &.is-open{
         transform: translateX(0);
@@ -29,7 +29,8 @@ flex-direction: column;
 .header-menu__btn{
   @extend %button;
   position: absolute;
-  justify-content: space-around;
+  align-items: center;
+  	justify-content: center;
   top: 10px;
   right: 10px;
   padding: 0;
@@ -38,29 +39,47 @@ flex-direction: column;
   height: 40px;
   border: none;
   z-index: 100;
-  fill: rgba(33, 33, 33, 1);
   background-color: #ffffff;
   transition: fill 250ms var(--animation-timing-function);
 
-&.is-open {
-  right: 15px;
-  }
   &:hover {
     cursor: pointer;
     fill: var(--accent-color);
   }
+
+&.is-open {
+  right: 15px;
+  position: fixed;
+  }
+
+  
 @media screen and (min-width:768px){
   display: none;
   
 }
 }
 
-.header-menu__btn.icon-cross{
-    display: none;
+
+.header-menu__icon{
+  width: 24px;
+  height: 16px;
+  .header-menu__btn.is-open & {
+    width: 19px;
+    height: 19px;
+  }
 }
-.header-menu__btn.is-open .icon-cross{
-    display: block;
-& .icon-menu{
-    display: none;
+
+.icon-menu{
+  transition: 500ms;
+  .header-menu__btn.is-open & {
+    opacity: 0;
+  }
 }
+
+.icon-close{
+  opacity: 0;
+  transition: 500ms;
+
+  .header-menu__btn.is-open & {
+		opacity: 1;}
 }
