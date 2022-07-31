@@ -34,7 +34,7 @@
 
   @media screen and (min-width: 768px) {
     flex-direction: column;
-    margin-right: 195px;
+    margin-right: 165px;
     margin-bottom: 60px;
   }
   @media screen and (min-width: 1200px) {
@@ -53,6 +53,7 @@
   align-items: center;
   margin-top: 20px;
   margin-right: 0px;
+  letter-spacing: 0.03em;
 
   color: rgba(255, 255, 255, 0.6);
 
@@ -90,14 +91,15 @@
   padding: 0px;
   width: auto;
   margin-top: 60px;
+  margin-bottom: 60px;
 
   .social-link__list {
-    margin-bottom: 60px;
-
+    margin-bottom: 0px;
+}
     @media screen and (min-width: 1200px) {
       margin-bottom: 0;
     }
-  }
+  
 
   @media screen and (min-width: 768px) {
     margin-right: auto;

@@ -56,10 +56,12 @@
 }
 
 .header-contact__icon {
-  margin-right: 10px;
+  margin-right: 8px;
   fill: var(--text-color);
   transition: fill 250ms var(--animation-timing-function);
 
+  @media screen and (min-width: 1200px) {
+    margin-right: 10px;}
   &.icon-mail {
     width: 14px;
     height: 10px;
